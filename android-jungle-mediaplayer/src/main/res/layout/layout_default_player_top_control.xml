@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_bar_container"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:paddingTop="16dp"
+    android:paddingRight="15dp"
+    android:clickable="true"
+    android:gravity="center_vertical"
+    android:background="@color/titlebar_background">
+
+    <LinearLayout
+        android:id="@id/player_back_zone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:clickable="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true">
+
+        <View
+            android:id="@id/player_back_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:duplicateParentState="true"
+            android:background="@drawable/player_bar_back_btn"/>
+
+        <TextView
+            android:id="@id/player_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:duplicateParentState="true"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/player_title_color"
+            android:textSize="16sp"
+            android:text="@string/back_title"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/player_title_extra_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/player_title_dev_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/player_title_dev_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#ec6400"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

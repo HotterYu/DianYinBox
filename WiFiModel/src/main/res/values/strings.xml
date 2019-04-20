@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WiFiModel</string>
+    <string name="wifi_connect_error">WIFI配置失败</string>
+</resources>

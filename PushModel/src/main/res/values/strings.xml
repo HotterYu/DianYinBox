@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PushModel</string>
+    <string name="media_loading">正在加载-></string>
+    <string name="media_load_fail">播放失败-></string>
+
+    <string name="update_title">重要升级提示</string>
+    <string name="update_hint">有新的版本需要更新，请及时升级，否则会影响正常使用 \n\n 如升级有问题，请联系店音: </string>
+
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DianYinBox.iml" filepath="$PROJECT_DIR$/DianYinBox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DianYinLib/DianYinLib.iml" filepath="$PROJECT_DIR$/DianYinLib/DianYinLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DownloadModel/DownloadModel.iml" filepath="$PROJECT_DIR$/DownloadModel/DownloadModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OkHttpLib/OkHttpLib.iml" filepath="$PROJECT_DIR$/OkHttpLib/OkHttpLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PushModel/PushModel.iml" filepath="$PROJECT_DIR$/PushModel/PushModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WiFiModel/WiFiModel.iml" filepath="$PROJECT_DIR$/WiFiModel/WiFiModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-jungle-mediaplayer/android-jungle-mediaplayer.iml" filepath="$PROJECT_DIR$/android-jungle-mediaplayer/android-jungle-mediaplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/placeholder/placeholder.iml" filepath="$PROJECT_DIR$/placeholder/placeholder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wifiutils/wifiutils.iml" filepath="$PROJECT_DIR$/wifiutils/wifiutils.iml" />
+    </modules>
+  </component>
+</project>

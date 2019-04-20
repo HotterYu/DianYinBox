@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">店音</string>
+    <string name="app_name_running">店音</string>
+    <string name="app_desc">助你打造统一的店铺音乐风格</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="wifi_pwd_input_hint">请输入WIFI密码</string>
+
+    <string name="load_media_fail">文件加载失败</string>
+
+
+    <string name="version_debug">测试</string>
+    <string name="version_release">正式</string>
+
+
+    <string name="static_ip_set_file_read_error">未检测到IP信息或者IP信息解析失败</string>
+    <string name="static_ip_set_install_pkg_not_find">系统没有安装 ZNTInstall</string>
+    <string name="static_ip_set_success">静态ip配置成功，重启盒子生效</string>
+
+    <string name="update_title">重要升级：</string>
+    <string name="update_hint">有新的版本需要更新，请及时升级，否则会影响正常使用 \n\n 如升级有问题，请联系我们（店音）: </string>
+
+    <string name="title_activity_dian_yin_player">DianYinPlayerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+    <string name="code_input_hint">请输入激活码</string>
+    <string name="name_input_hint">请输入门店名称</string>
+
+</resources>

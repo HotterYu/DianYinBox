@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.znt.push">
+
+    <application>
+        <activity android:name=".MainActivity" />
+
+        <service
+            android:name=".PushService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".timer.RemindReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".timer.AlarmService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BatterySeekBar">
+        <item name="android:background">
+            @null
+        </item>
+        <item name="android:progressDrawable">@drawable/player_progress_horizontal</item>
+    </style>
+
+    <style name="MediaPlayerSeekBar" parent="android:Widget.SeekBar">
+        <item name="android:progressDrawable">@drawable/player_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/player_progress_horizontal</item>
+        <item name="android:thumb">
+            @drawable/thumb_icon
+        </item>
+        <item name="android:thumbOffset">0dp</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:maxHeight">10dp</item>
+    </style>
+
+    <style name="SeekBarAppTheme">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:focusable">true</item>
+        <item name="android:progressDrawable">
+            @drawable/simple_player_progress_horizontal_holo_dark
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/simple_player_progress_horizontal_holo_dark
+        </item>
+        <item name="android:thumb">@drawable/simple_player_control_selector_holo_dark</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:maxHeight">13dip</item>
+        <item name="android:paddingLeft">15.0dip</item>
+        <item name="android:paddingRight">15.0dip</item>
+
+    </style>
+
+</resources>

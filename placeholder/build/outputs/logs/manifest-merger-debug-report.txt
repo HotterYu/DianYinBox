@@ -1,0 +1,15 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
+	package
+		ADDED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:11-37
+		INJECTED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:4:5-7:19
+	android:label
+		ADDED from C:\Users\Hotter\AndroidStudioProjects\DianYinBox\placeholder\src\main\AndroidManifest.xml:5:9-41
