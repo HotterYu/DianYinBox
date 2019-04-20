@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:3:5-27
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:5:5-22:19
+activity#com.znt.push.MainActivity
+ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:6:9-50
+	android:name
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:6:19-47
+service#com.znt.push.PushService
+ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:8:9-11:39
+	android:enabled
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:10:13-35
+	android:exported
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:9:13-40
+receiver#com.znt.push.timer.RemindReceiver
+ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:13:9-16:39
+	android:enabled
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:15:13-35
+	android:exported
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:14:13-49
+service#com.znt.push.timer.AlarmService
+ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:18:9-21:47
+	android:enabled
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:20:13-35
+	android:exported
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:21:13-36
+	android:name
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml:19:13-47
+uses-sdk
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\PushModel\src\main\AndroidManifest.xml

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.znt.push"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="27" />
+
+    <application>
+        <activity android:name="com.znt.push.MainActivity" />
+
+        <service
+            android:name="com.znt.push.PushService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.znt.push.timer.RemindReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name="com.znt.push.timer.AlarmService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

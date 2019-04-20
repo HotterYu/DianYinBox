@@ -1,0 +1,45 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+	package
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:1:1-12:12
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:2:5-63
+application
+ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:5:5-10:19
+	android:supportsRtl
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:8:9-35
+	android:label
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:7:9-41
+	android:allowBackup
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml:6:9-35
+uses-sdk
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		ADDED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
+		INJECTED from E:\StudioPro\GitHub\DianYinBox\android-jungle-mediaplayer\src\main\AndroidManifest.xml
