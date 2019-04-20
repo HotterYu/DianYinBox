@@ -65,7 +65,7 @@ public class ZNTDownloadService extends Service
         	{
             	mContext = getApplicationContext();
             	//DBManager.init(mContext);
-            	FileDownLoadManager.init(new IDownloadListener()
+            	FileDownLoadManager.init(mContext,new IDownloadListener()
             	{
 					@Override
 					public void onDownloadSpaceCheck(long size) 
