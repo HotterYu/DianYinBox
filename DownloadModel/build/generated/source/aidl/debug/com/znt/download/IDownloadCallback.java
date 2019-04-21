@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\Users\\Hotter\\AndroidStudioProjects\\DianYinBox\\DownloadModel\\src\\main\\aidl\\com\\znt\\download\\IDownloadCallback.aidl
+ * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\DownloadModel\\src\\main\\aidl\\com\\znt\\download\\IDownloadCallback.aidl
  */
 package com.znt.download;
 // Declare any non-default types here with import statements

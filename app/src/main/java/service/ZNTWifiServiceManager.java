@@ -42,7 +42,7 @@ public class ZNTWifiServiceManager
 	}
 
 
-	private int WIFI_STATE_CHECK_MAX = 3;
+	private final int WIFI_STATE_CHECK_MAX = 10;
 	private int checkWifiInternalCount = WIFI_STATE_CHECK_MAX - 1;
 	public void devStatusCheck(boolean isOnline)
 	{
@@ -56,15 +56,16 @@ public class ZNTWifiServiceManager
 					{
 						mIWifiAidlInterface.devStatusCheck(isOnline);
 						checkWifiInternalCount = 0;
-						if(WIFI_STATE_CHECK_MAX < 20)
-							WIFI_STATE_CHECK_MAX ++;
+						/*if(WIFI_STATE_CHECK_MAX < 10)
+							WIFI_STATE_CHECK_MAX ++;*/
 					}
 					else
 						checkWifiInternalCount ++;
 				}
 				else
 				{
-					WIFI_STATE_CHECK_MAX = 3;
+					//WIFI_STATE_CHECK_MAX = 3;
+					checkWifiInternalCount = 0;
 				}
 			}
 			catch (Exception e)

@@ -138,5 +138,6 @@
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.1.0" level="project" />
     <orderEntry type="module" module-name="OkHttpLib" />
     <orderEntry type="module" module-name="DianYinLib" />
+    <orderEntry type="library" name="Gradle: android-android-27" level="project" />
   </component>
 </module>

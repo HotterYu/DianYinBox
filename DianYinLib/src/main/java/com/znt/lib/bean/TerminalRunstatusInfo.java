@@ -33,6 +33,24 @@ public class TerminalRunstatusInfo  implements Serializable
     private String shopcode = "";
     private String shopname = "";
     private String onlineStatus = "";
+    private String shutdownTime = "";//格式HH:mm:ss
+    private String startupMinute = "";//分钟
+
+    public String getShutdownTime() {
+        return shutdownTime;
+    }
+
+    public void setShutdownTime(String shutdownTime) {
+        this.shutdownTime = shutdownTime;
+    }
+
+    public String getStartupMinute() {
+        return startupMinute;
+    }
+
+    public void setStartupMinute(String startupMinute) {
+        this.startupMinute = startupMinute;
+    }
 
     public String getTerminalId() {
         return terminalId;

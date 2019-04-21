@@ -46,6 +46,7 @@ import com.znt.push.httpmodel.HttpAPI;
 import com.znt.push.httpmodel.HttpCallback;
 import com.znt.push.httpmodel.HttpClient;
 import com.znt.push.location.LocationModel;
+import com.znt.push.reboot.RebootModel;
 import com.znt.push.update.UpdateManager;
 
 import java.util.ArrayList;
@@ -91,6 +92,8 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
     private volatile boolean isVolumeSetEnable = true;
 
     private int locationFailCount = 0;
+
+    private RebootModel mRebootModel = null;
 
     private List<MediaInfor> pushMedias = new ArrayList<>();
 
@@ -198,6 +201,8 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
         {
             Constant.deviceCode = SystemUtils.getAndroidId(mContext) + "_BOX";
 
+            mRebootModel = new RebootModel(getApplicationContext());
+
             LocalDataEntity.newInstance(getApplicationContext()).setPlanId("");
             LocalDataEntity.newInstance(getApplicationContext()).setMusicUpdateTime("");
             LocalDataEntity.newInstance(getApplicationContext()).setAdPlanId("");
@@ -303,6 +308,9 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
                         checkTime = 0;
                         if(isCurAdPlanGetFinished || isCurPlanGetFinished)
                             mCurPlayMediaManager.updateCurAllMedias(getApplicationContext());
+
+                        mRebootModel.checkRebootDevice(curServerTime);
+
                     }
                     else
                     {
@@ -1263,15 +1271,10 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
 
 
     private int curPlanRuninngCount = 0;
-    private volatile boolean isFirstGetPlan = true;
+    private boolean isGetPlanReverse = true;
     private boolean isGetCurPlanRunning = false;
     private void getCurPlan(final String planId)
     {
-        if(!NetWorkUtils.isNetConnected(mContext))
-        {
-            curPlanGetFailProcess();
-            return;
-        }
         if(!isInitFinished)
         {
             Log.e(TAG, "device not init");
@@ -1282,12 +1285,22 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
             Log.e(TAG, "planId  is  empty");
             return;
         }
+        if(isGetPlanReverse)
+        {
+            isGetPlanReverse = !isGetPlanReverse;
+            return;
+        }
+        if(!NetWorkUtils.isNetConnected(mContext))
+        {
+            curPlanGetFailProcess();
+            return;
+        }
         if(!isGetCurPlanRunning || !isCurPlanGetFinished)
         {
             isGetCurPlanRunning = true;
 
             curPlanRuninngCount = 0;
-            isFirstGetPlan = false;
+            isGetPlanReverse = false;
             LocalDataEntity.newInstance(mContext).setPlanTime("");
             try
             {
@@ -1460,10 +1473,10 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
 
     private void reportError(String error)
     {
-        if(NetWorkUtils.isNetConnected(mContext))
+        /*if(NetWorkUtils.isNetConnected(mContext))
         {
             HttpClient.errorReport(mContext,error);
-        }
+        }*/
     }
 
     private void checkUpdateProcess(DeviceStatusInfor deviceStatusInfor)

@@ -73,16 +73,15 @@
         <service
             android:name="com.znt.download.ZNTDownloadService"
             android:permission="1000"
-            android:process=":ZNTDownloadService" />
+            android:process="com.znt.download.ZNTDownloadService" />
         <service
             android:name="com.znt.push.ZNTPushService"
             android:permission="1000"
-            android:process=":ZNTPushService" />
-        <service android:name="com.znt.wifimodel.ZNTWifiService"/>
-        <!--<service
+            android:process="com.znt.push.ZNTPushService" />
+        <service
             android:name="com.znt.wifimodel.ZNTWifiService"
             android:permission="1000"
-            android:process=":ZNTWifiService" />-->
+            android:process="com.znt.wifimodel.ZNTWifiService" />
         <!--<service android:name="com.znt.wifimodel.ZNTWifiService"/>-->
         <!--<service android:name="com.znt.push.ZNTPushService"/>
         <service android:name="com.znt.download.ZNTDownloadService"/>

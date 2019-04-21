@@ -19,6 +19,7 @@ public class CurPlanInfor implements Serializable
 	private String startDate;
 	private String endDate;
 	private String addTime;
+	private String fileSize;
 
 	private String[] scheIds;
 	private String[] cycleTypes;
@@ -41,7 +42,14 @@ public class CurPlanInfor implements Serializable
 		this.curPlanSubInfors.add(tempInfo);
 	}
 
-	/*public void initSubPlanInfors()
+	public String getFileSize() {
+		return fileSize;
+	}
+
+	public void setFileSize(String fileSize) {
+		this.fileSize = fileSize;
+	}
+/*public void initSubPlanInfors()
 	{
 		int count = getScheIds().length;
 		clearSubPlanInfos();

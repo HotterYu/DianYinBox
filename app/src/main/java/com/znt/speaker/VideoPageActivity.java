@@ -45,13 +45,13 @@ import com.znt.push.entity.LocalDataEntity;
 import com.znt.push.httpmodel.HttpAPI;
 import com.znt.push.httpmodel.HttpCallback;
 import com.znt.push.httpmodel.HttpClient;
+import com.znt.push.reboot.RebootModel;
 import com.znt.push.v.IDevStatusView;
 import com.znt.speaker.dialog.LoginDialog;
 import com.znt.speaker.dialog.SettingDialog;
 import com.znt.speaker.dialog.UpdateDialog;
 import com.znt.speaker.factory.HardWarePlayFactory;
 import com.znt.speaker.media.MediaScanFactory;
-import com.znt.speaker.model.RebootModel;
 import com.znt.speaker.model.SDCardMountModel;
 import com.znt.speaker.permission.PermissionHelper;
 import com.znt.speaker.permission.PermissionInterface;
@@ -610,17 +610,14 @@ public class VideoPageActivity extends AppCompatActivity implements
     @Override
     public void onPushFail(int count)
     {
-        if(count >= 3)
-        {
-            mPlayFactory.setOnLineStatus(false);
-            mZNTWifiServiceManager.devStatusCheck(false);
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    mDevInfoView.setDevStatus(false);
-                }
-            });
-        }
+        mPlayFactory.setOnLineStatus(false);
+        mZNTWifiServiceManager.devStatusCheck(false);
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                mDevInfoView.setDevStatus(false);
+            }
+        });
     }
 
     @Override
@@ -630,7 +627,6 @@ public class VideoPageActivity extends AppCompatActivity implements
         {
             mPlayFactory.updatePushParams(null,false);
         }
-        mRebootModel.checkRebootDevice(curServerTime);
     }
 
     @Override

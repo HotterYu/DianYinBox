@@ -183,7 +183,12 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     @Override
     public boolean isPlaying() {
-        return mMediaPlayer != null && mMediaPlayer.isPlaying();
+        try {
+            return mMediaPlayer != null && mMediaPlayer.isPlaying();
+        } catch (Exception e) {
+
+        }
+        return false;
     }
 
     @Override

@@ -7,7 +7,8 @@ import com.znt.download.IDownloadListener;
 import com.znt.lib.bean.MediaInfor;
 import com.znt.lib.utils.NetWorkUtils;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileDownLoadManager 
 {
@@ -18,13 +19,21 @@ public class FileDownLoadManager
     private volatile boolean isDownloadRunning = false;
     private boolean isCancel = false;
     private MediaInfor curDownloadSong = null;
-    private LinkedList<MediaInfor> downloadList = new LinkedList<MediaInfor>();
+    private List<MediaInfor> mediaList = new ArrayList<>();
+
+    private List<MediaInfor> getDownloadList()
+    {
+        if(mediaList == null)
+            mediaList = new ArrayList<>();
+        return mediaList;
+    }
     
     private IDownloadListener mIDownloadListener = null;
     
-    public FileDownLoadManager(IDownloadListener mIDownloadListener)
+    public FileDownLoadManager(Context context,IDownloadListener mIDownloadListener)
     {
     	this.mIDownloadListener = mIDownloadListener;
+    	this.context = context;
     }
     
     private DownloadListener listener = new DownloadListener() 
@@ -52,7 +61,7 @@ public class FileDownLoadManager
             {
             	curDownloadSong.increaseReloadCount();
             	if(curDownloadSong.getReloadCount() <= 2)
-            		downloadList.add(0, curDownloadSong);
+                    getDownloadList().add(0, curDownloadSong);
             }
             	
             startDownload();
@@ -84,14 +93,14 @@ public class FileDownLoadManager
     };
     
     public static FileDownLoadManager INSTANCE = null;
-    public static FileDownLoadManager init(IDownloadListener mIDownloadListener)
+    public static FileDownLoadManager init(Context context,IDownloadListener mIDownloadListener)
 	{
 		if(INSTANCE == null)
 		{
 			synchronized (FileDownLoadManager.class) 
 			{
 				if(INSTANCE == null)
-					INSTANCE = new FileDownLoadManager(mIDownloadListener);
+					INSTANCE = new FileDownLoadManager(context,mIDownloadListener);
 			}
 		}
 		
@@ -110,7 +119,7 @@ public class FileDownLoadManager
 	
 	public void addDownloadSong(MediaInfor songInfor)
     {
-    	downloadList.add(songInfor);
+        getDownloadList().add(songInfor);
     	startDownload();
     }
     /*public void addDownloadSongs(List<MediaInfor> songList)
@@ -155,12 +164,12 @@ public class FileDownLoadManager
     		return;
     	}
     	
-    	if(downloadList.size() > 0)
+    	if(getDownloadList().size() > 0)
     	{
     		try 
     		{
     			isDownloadRunning = true;
-        		curDownloadSong = downloadList.remove(0);
+        		curDownloadSong = getDownloadList().remove(0);
         		String url = curDownloadSong.getMediaUrl();
         		
         		if(downloadTask != null)

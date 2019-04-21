@@ -177,11 +177,11 @@ public abstract class WifiAdmin
 		else
 			config.SSID=SSID;
 		WifiConfiguration tempConfig = this.IsExsits(SSID);
-		if (tempConfig != null)
+		/*if (tempConfig != null)
 		{
 			mWifiManager.removeNetwork(tempConfig.networkId);
-			//wifiManager.saveConfiguration();
-		}
+			mWifiManager.saveConfiguration();
+		}*/
 		// nopass
 		if (type == TYPE_NO_PASSWD)
 		{

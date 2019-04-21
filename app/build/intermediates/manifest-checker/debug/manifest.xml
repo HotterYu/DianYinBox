@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.znt.speaker"
     android:installLocation="auto"
-    android:versionCode="20190364"
-    android:versionName="V2019.03.64" >
+    android:versionCode="20190369"
+    android:versionName="V2019.03.69" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -83,18 +83,15 @@
         <service
             android:name="com.znt.download.ZNTDownloadService"
             android:permission="1000"
-            android:process=":ZNTDownloadService" />
+            android:process="com.znt.download.ZNTDownloadService" />
         <service
             android:name="com.znt.push.ZNTPushService"
             android:permission="1000"
-            android:process=":ZNTPushService" />
-        <service android:name="com.znt.wifimodel.ZNTWifiService" />
-        <!--
-            <service
+            android:process="com.znt.push.ZNTPushService" />
+        <service
             android:name="com.znt.wifimodel.ZNTWifiService"
             android:permission="1000"
-            android:process=":ZNTWifiService" />
-        -->
+            android:process="com.znt.wifimodel.ZNTWifiService" />
         <!-- <service android:name="com.znt.wifimodel.ZNTWifiService"/> -->
         <!--
         <service android:name="com.znt.push.ZNTPushService"/>
