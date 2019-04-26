@@ -14,8 +14,8 @@ android {
         applicationId "com.znt.speaker"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 20190369
-        versionName "V2019.03.69"
+        versionCode 20190371
+        versionName "V2019.03.71"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
         ndk {

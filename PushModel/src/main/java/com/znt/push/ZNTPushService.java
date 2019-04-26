@@ -180,7 +180,6 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
     @Override
     public IBinder onBind(Intent intent)
     {
-
         if(mContext == null)
         {
             mContext = getApplicationContext();
@@ -207,6 +206,7 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
             LocalDataEntity.newInstance(getApplicationContext()).setMusicUpdateTime("");
             LocalDataEntity.newInstance(getApplicationContext()).setAdPlanId("");
             LocalDataEntity.newInstance(getApplicationContext()).setAdPlanTime("");
+
 
             if(NetWorkUtils.isNetConnected(mContext))
             {
@@ -252,8 +252,10 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+
                     rebootCount = LocalDataEntity.newInstance(getApplicationContext()).getRebootCount();
                     startCheckDevStatus();
+
                 }
             },3000);
         }
@@ -988,9 +990,12 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
                 public void onSuccess(WifiInfoResultBean wifiInfoResultBean) {
                     if(wifiInfoResultBean != null && wifiInfoResultBean.isSuccess())
                     {
-                        String wifiName = wifiInfoResultBean.getData().getWifiName();
-                        String wifiPwd = wifiInfoResultBean.getData().getWifiPassword();
-                        callback(PushModelConstant.CALL_BACK_ON_WIFI_CONGFIG_NOTYFY, wifiName, wifiPwd, null);
+                        if(wifiInfoResultBean.getData() != null)
+                        {
+                            String wifiName = wifiInfoResultBean.getData().getWifiName();
+                            String wifiPwd = wifiInfoResultBean.getData().getWifiPassword();
+                            callback(PushModelConstant.CALL_BACK_ON_WIFI_CONGFIG_NOTYFY, wifiName, wifiPwd, null);
+                        }
                     }
                     else
                     {

@@ -99,8 +99,10 @@ public abstract class CurPlanCallback<T>  extends BaseCallBack<T>
                 curPlanResultBean.getData().addCurPlanSubInfors(tempSubInfo);
                 subPlanInfos.add(tempSubInfo);
             }
+
             DBMediaHelper.getInstance().addCurSubPlanInfors(subPlanInfos);
 
+            DBMediaHelper.getInstance().deleteLargeMedias(planInfo.getFileSizeLong());
 
             return (T) curPlanResultBean;
         }

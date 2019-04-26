@@ -1,6 +1,8 @@
 package com.znt.speaker.view;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
@@ -15,6 +17,9 @@ import com.znt.lib.utils.SystemUtils;
 import com.znt.speaker.R;
 
 public class DevInfoView extends RelativeLayout {
+
+    private Context mContext = null;
+
     protected View mTopView;
     private TextView tvDevNum;
     private TextView tvDevStatus;
@@ -53,6 +58,9 @@ public class DevInfoView extends RelativeLayout {
 
     private void init(Context context)
     {
+
+        this.mContext = context;
+
         View parentView = LayoutInflater.from(context).inflate(R.layout.activity_dev_info,this,true);
 
         mTopView = parentView.findViewById(R.id.view_jz_top);

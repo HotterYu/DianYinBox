@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Apr 21 20:49:27 CST 2019
+#Wed Apr 24 15:23:02 CST 2019
 7.path=lib/arm64-v8a/libBugly.so
 2.base=E\:\\StudioPro\\GitHub\\DianYinBox\\app\\build\\intermediates\\transforms\\mergeJniLibs\\release\\0
 5.set=NATIVE_RESOURCE

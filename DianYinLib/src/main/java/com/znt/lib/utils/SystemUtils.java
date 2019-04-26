@@ -731,6 +731,10 @@ public class SystemUtils
 			return PluginConstant.versiongName;
 		if(mPackageInfo == null)
 			return PluginConstant.versiongName + "N";
+
+		Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.znt.rtc");
+		if(intent != null)
+			return  mPackageInfo.versionName + "R";
 		return mPackageInfo.versionName;
 
   	}

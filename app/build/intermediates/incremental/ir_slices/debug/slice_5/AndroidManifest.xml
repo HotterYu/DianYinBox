@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.znt.speaker"
-      android:versionCode="20190369"
-      android:versionName="V2019.03.69"
+      android:versionCode="20190371"
+      android:versionName="V2019.03.71"
       split="lib_slice_5_apk">
 </manifest>

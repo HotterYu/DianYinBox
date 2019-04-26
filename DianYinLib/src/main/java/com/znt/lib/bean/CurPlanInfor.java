@@ -1,5 +1,7 @@
 package com.znt.lib.bean;
 
+import android.text.TextUtils;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,11 @@ public class CurPlanInfor implements Serializable
 
 	public String getFileSize() {
 		return fileSize;
+	}
+	public long getFileSizeLong() {
+		if(!TextUtils.isEmpty(fileSize))
+			return Long.parseLong(fileSize);
+		return 0;
 	}
 
 	public void setFileSize(String fileSize) {
