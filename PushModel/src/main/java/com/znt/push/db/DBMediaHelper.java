@@ -284,6 +284,33 @@ public class DBMediaHelper
         //db.saveBindingId(list); // 保存实体类或实体类的List到数据库，如果该类型的id是自动生成的，则保存完后会给id赋值
     }
 
+    public synchronized void deleteLargeMedias(long allMediaSize) throws DbException
+    {
+        if(allMediaSize <= 0)
+            return;
+        long localStorageSize = SystemUtils.getTotalExternalMemorySize();
+        if(allMediaSize > localStorageSize)
+        {
+            long deleteSize = (allMediaSize - localStorageSize) + 100 * 1024 * 1024;
+            List<MediaInfor> allMedias = getAllMedias();
+            int allSize = allMedias.size();
+            if(allSize > 1)
+            {
+                for(int i=0;i<allSize - 1;i++)
+                {
+                    MediaInfor mediaInfor = allMedias.get(i);
+                    long fileSize = mediaInfor.getMediaSize();
+                    deleteSize = deleteSize - fileSize;
+                    if(deleteSize <= 0)
+                        break;
+                    else if(fileSize == 0 || fileSize > 100 * 1024 * 1024 )
+                        db.delete(MediaInfor.class, WhereBuilder.b("MEDIA_URL", "=", mediaInfor.getMediaUrl()));//根据where语句的条件进行删除操作
+                }
+            }
+
+        }
+    }
+
     /**
      * 删除全部的计划歌曲列表
      */
