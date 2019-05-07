@@ -111,8 +111,7 @@ public class ZNTPushServiceManager
 
             //String mem = SystemUtils.getMem(context);
 
-            //return space + " " + netType + " " + SystemUtils.getScreenOritation(getApplicationContext()) + "  " + rebootCount;
-            return space + " " + netType + "  " + rotation + "   " + SystemUtils.getIP() + " MAC:"+ mac + "  " + rebootCount + " PROS:"   + procStatusInfo + "  " + Constant.DEBUG_INFO + "\n mem:";
+            return space + " " + netType + "  " + rotation + "   " + SystemUtils.getIP() + " MAC:"+ mac + "  " + rebootCount + " PROS:"   + procStatusInfo + "  " + Constant.DEBUG_INFO ;
         }
         catch (Exception e)
         {

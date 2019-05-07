@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\StudioPro\\GitHub\\DianYinBox\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-it\\values-it.xml",
+            "outputFile": "D:\\Development\\code\\DianYinBox\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-it\\values-it.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ef034be3fd3dfc175a69760298651049\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\538c4df2fdd9383c2ef9a3358d926352\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\47b5f74c22e2bd2ab5bdba2aec438933\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\9a649040e3d7883994f150b2481ae2c7\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

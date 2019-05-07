@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\PushModel\\src\\main\\aidl\\com\\znt\\push\\IPushAidlInterface.aidl
+ * Original file: D:\\Development\\code\\DianYinBox\\PushModel\\src\\main\\aidl\\com\\znt\\push\\IPushAidlInterface.aidl
  */
 package com.znt.push;
 public interface IPushAidlInterface extends android.os.IInterface

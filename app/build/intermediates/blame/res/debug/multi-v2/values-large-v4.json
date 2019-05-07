@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\StudioPro\\GitHub\\DianYinBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "D:\\Development\\code\\DianYinBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ef034be3fd3dfc175a69760298651049\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\538c4df2fdd9383c2ef9a3358d926352\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

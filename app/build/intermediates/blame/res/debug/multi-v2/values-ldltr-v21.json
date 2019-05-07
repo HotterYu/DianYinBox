@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\StudioPro\\GitHub\\DianYinBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "outputFile": "D:\\Development\\code\\DianYinBox\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ef034be3fd3dfc175a69760298651049\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\538c4df2fdd9383c2ef9a3358d926352\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

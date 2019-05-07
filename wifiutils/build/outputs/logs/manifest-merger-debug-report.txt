@@ -1,61 +1,61 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
 	package
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:11-50
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:11-50
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:1:1-16:12
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:4:5-78
+ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:4:5-78
 	android:name
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:4:22-76
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:4:22-76
 uses-permission#android.permission.CHANGE_NETWORK_STATE
-ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:5:5-78
+ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:5:5-78
 	android:name
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:5:22-76
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:5:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:6:5-75
+ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:6:5-75
 	android:name
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:6:22-73
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:6:22-73
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:7:5-75
+ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:7:5-75
 	android:name
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:7:22-73
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:7:22-73
 application
-ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:9:5-14:19
+ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:9:5-14:19
 	android:supportsRtl
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:12:9-35
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:11:9-41
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:11:9-41
 	android:allowBackup
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml:10:9-35
 uses-sdk
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		ADDED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		ADDED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\wifiutils\src\main\AndroidManifest.xml

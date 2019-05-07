@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\DownloadModel\\src\\main\\aidl\\com\\znt\\download\\IDownloadCallback.aidl
+ * Original file: D:\\Development\\code\\DianYinBox\\DownloadModel\\src\\main\\aidl\\com\\znt\\download\\IDownloadCallback.aidl
  */
 package com.znt.download;
 // Declare any non-default types here with import statements

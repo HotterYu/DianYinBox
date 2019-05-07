@@ -229,14 +229,6 @@ public abstract class BaseMediaPlayer
 
     }
 
-    protected void notifyLoadFailed() {
-        mIsLoading = false;
-        mIsLoadingFailed = true;
-        Log.e(TAG, "MediaPlayer Load **Failed**!!");
-        if(mPlayerListener != null)
-            mPlayerListener.onLoadFailed();
-    }
-
     protected void notifyError(int what, String message) {
         notifyError(what, true, message);
     }

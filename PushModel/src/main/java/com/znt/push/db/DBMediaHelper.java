@@ -303,7 +303,7 @@ public class DBMediaHelper
                     deleteSize = deleteSize - fileSize;
                     if(deleteSize <= 0)
                         break;
-                    else if(fileSize == 0 || fileSize > 100 * 1024 * 1024 )
+                    else
                         db.delete(MediaInfor.class, WhereBuilder.b("MEDIA_URL", "=", mediaInfor.getMediaUrl()));//根据where语句的条件进行删除操作
                 }
             }

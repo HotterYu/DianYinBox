@@ -56,7 +56,7 @@ public class RebootModel
                 if(!TextUtils.isEmpty(curHour))
                 {
                     int curHourInt = Integer.parseInt(curHour);
-                    if((curHourInt == 2))//凌晨2点
+                    if((curHourInt == 2 || curHourInt == 3 || curHourInt == 4))//凌晨
                     {
                         //更新关机时间
                         LocalDataEntity.newInstance(activity).setLastRebootTime(curServerTime);
@@ -134,8 +134,8 @@ public class RebootModel
     private boolean isOver24Hours(long curServerTime)
     {
         long lastRebootTime = LocalDataEntity.newInstance(activity).getLastRebootTime();
-        if(lastRebootTime <= 0)
-            return false;
+        /*if(lastRebootTime <= 0)
+            return false;*/
 
         if((curServerTime - lastRebootTime) >= 24 * 60 * 60 * 1000)
             return true;

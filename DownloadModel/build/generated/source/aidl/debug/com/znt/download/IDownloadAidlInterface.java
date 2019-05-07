@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\DownloadModel\\src\\main\\aidl\\com\\znt\\download\\IDownloadAidlInterface.aidl
+ * Original file: D:\\Development\\code\\DianYinBox\\DownloadModel\\src\\main\\aidl\\com\\znt\\download\\IDownloadAidlInterface.aidl
  */
 package com.znt.download;
 public interface IDownloadAidlInterface extends android.os.IInterface

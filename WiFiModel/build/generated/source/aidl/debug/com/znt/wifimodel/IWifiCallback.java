@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\WiFiModel\\src\\main\\aidl\\com\\znt\\wifimodel\\IWifiCallback.aidl
+ * Original file: D:\\Development\\code\\DianYinBox\\WiFiModel\\src\\main\\aidl\\com\\znt\\wifimodel\\IWifiCallback.aidl
  */
 package com.znt.wifimodel;
 // Declare any non-default types here with import statements

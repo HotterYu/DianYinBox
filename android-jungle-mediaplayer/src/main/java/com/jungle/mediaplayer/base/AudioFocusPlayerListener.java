@@ -53,18 +53,18 @@ public class AudioFocusPlayerListener implements BaseMediaPlayerListener {
     }
 
     private void requestAudioFocus() {
-        AudioManager audioManager = (AudioManager)
+        /*AudioManager audioManager = (AudioManager)
                 mContext.getSystemService(Context.AUDIO_SERVICE);
         audioManager.requestAudioFocus(
                 mAudioFocusChangeListener,
                 AudioManager.STREAM_MUSIC,
-                AudioManager.AUDIOFOCUS_GAIN);
+                AudioManager.AUDIOFOCUS_GAIN);*/
     }
 
     private void releaseAudioFocus() {
-        AudioManager audioManager = (AudioManager)
+        /*AudioManager audioManager = (AudioManager)
                 mContext.getSystemService(Context.AUDIO_SERVICE);
-        audioManager.abandonAudioFocus(mAudioFocusChangeListener);
+        audioManager.abandonAudioFocus(mAudioFocusChangeListener);*/
     }
 
     private AudioManager.OnAudioFocusChangeListener mAudioFocusChangeListener =

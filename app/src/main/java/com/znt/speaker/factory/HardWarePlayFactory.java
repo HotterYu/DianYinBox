@@ -99,6 +99,8 @@ public class HardWarePlayFactory
         this.mZNTPushServiceManager = mZNTPushServiceManager;
     }
 
+    private int onLoadFailCount = 0;
+
     private BaseMediaPlayerListener mBaseMediaPlayerListener = new BaseMediaPlayerListener() {
         @Override
         public void onLoading() {
@@ -115,7 +117,7 @@ public class HardWarePlayFactory
                 public void run() {
                     playNext();
                 }
-            },1000);
+            },3000);
         }
 
         @Override
@@ -128,20 +130,26 @@ public class HardWarePlayFactory
 
             if(mVideoPlayer != null && mVideoPlayer.getPlayerBottomControl() != null)
                 mVideoPlayer.getPlayerBottomControl().onErrorProcess();
-            Constant.DEBUG_INFO += "-onLoadFailed";
-            updatePushParams(mContext.getResources().getString(R.string.media_load_fail),true);
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(mContext, "加载文件失败："+message, Toast.LENGTH_SHORT).show();
-                    playNext();
+                    if(onLoadFailCount <= 5)
+                    {
+                        Constant.DEBUG_INFO += "\n  (onError:"+message+")";
+                        Toast.makeText(mContext, "加载文件失败："+message, Toast.LENGTH_SHORT).show();
+                        playNext();
+                    }
+                    else
+                        onLoadFailCount ++;
                 }
-            },1000);
+            },3000);
 
         }
 
         @Override
         public void onStartPlay() {
+
+            onLoadFailCount = 0;
 
             if(mVideoPlayer != null && mVideoPlayer.getPlayerBottomControl() != null)
                 mVideoPlayer.getPlayerBottomControl().onStartPlayProcess();

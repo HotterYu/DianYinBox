@@ -46,7 +46,6 @@ import com.znt.push.httpmodel.HttpAPI;
 import com.znt.push.httpmodel.HttpCallback;
 import com.znt.push.httpmodel.HttpClient;
 import com.znt.push.location.LocationModel;
-import com.znt.push.reboot.RebootModel;
 import com.znt.push.update.UpdateManager;
 
 import java.util.ArrayList;
@@ -92,8 +91,6 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
     private volatile boolean isVolumeSetEnable = true;
 
     private int locationFailCount = 0;
-
-    private RebootModel mRebootModel = null;
 
     private List<MediaInfor> pushMedias = new ArrayList<>();
 
@@ -199,8 +196,6 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
         try
         {
             Constant.deviceCode = SystemUtils.getAndroidId(mContext) + "_BOX";
-
-            mRebootModel = new RebootModel(getApplicationContext());
 
             LocalDataEntity.newInstance(getApplicationContext()).setPlanId("");
             LocalDataEntity.newInstance(getApplicationContext()).setMusicUpdateTime("");
@@ -310,8 +305,6 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
                         checkTime = 0;
                         if(isCurAdPlanGetFinished || isCurPlanGetFinished)
                             mCurPlayMediaManager.updateCurAllMedias(getApplicationContext());
-
-                        mRebootModel.checkRebootDevice(curServerTime);
 
                     }
                     else

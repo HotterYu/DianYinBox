@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\PushModel\\src\\main\\aidl\\com\\znt\\push\\IPushCallback.aidl
+ * Original file: D:\\Development\\code\\DianYinBox\\PushModel\\src\\main\\aidl\\com\\znt\\push\\IPushCallback.aidl
  */
 package com.znt.push;
 // Declare any non-default types here with import statements

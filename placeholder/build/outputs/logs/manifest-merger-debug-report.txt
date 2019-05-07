@@ -1,15 +1,15 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
-INJECTED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
+ADDED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:1-9:12
 	package
-		ADDED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:11-37
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml
-		INJECTED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml
+		ADDED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:1:11-37
+		INJECTED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml
+		INJECTED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:4:5-7:19
+ADDED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:4:5-7:19
 	android:label
-		ADDED from E:\StudioPro\GitHub\DianYinBox\placeholder\src\main\AndroidManifest.xml:5:9-41
+		ADDED from D:\Development\code\DianYinBox\placeholder\src\main\AndroidManifest.xml:5:9-41

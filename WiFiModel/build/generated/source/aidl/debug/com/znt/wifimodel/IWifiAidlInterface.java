@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\StudioPro\\GitHub\\DianYinBox\\WiFiModel\\src\\main\\aidl\\com\\znt\\wifimodel\\IWifiAidlInterface.aidl
+ * Original file: D:\\Development\\code\\DianYinBox\\WiFiModel\\src\\main\\aidl\\com\\znt\\wifimodel\\IWifiAidlInterface.aidl
  */
 package com.znt.wifimodel;
 public interface IWifiAidlInterface extends android.os.IInterface

@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.znt.speaker"
     android:installLocation="auto"
-    android:versionCode="20190371"
-    android:versionName="V2019.03.71" >
+    android:versionCode="20190375"
+    android:versionName="V2019.03.75" >
 
     <uses-sdk
         android:minSdkVersion="15"

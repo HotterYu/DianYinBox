@@ -466,7 +466,7 @@ public class VideoPageActivity extends AppCompatActivity implements
             mDevInfoView.setOnDevVersionClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mRebootModel.rebootBox(10);
+                    mRebootModel.rebootBox(5);
                 }
             });
 
@@ -626,6 +626,7 @@ public class VideoPageActivity extends AppCompatActivity implements
         if(count == 5)
         {
             mPlayFactory.updatePushParams(null,false);
+            mRebootModel.checkRebootDevice(curServerTime);
         }
     }
 
