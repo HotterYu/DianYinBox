@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.znt.speaker"
     android:installLocation="auto"
-    android:versionCode="20190375"
-    android:versionName="V2019.03.75" >
+    android:versionCode="20190386"
+    android:versionName="V2019.03.86" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -60,6 +60,7 @@
         android:hardwareAccelerated="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
@@ -80,7 +81,6 @@
 
         <service
             android:name="com.znt.download.ZNTDownloadService"
-            android:permission="1000"
             android:process="com.znt.download.ZNTDownloadService" />
         <service
             android:name="com.znt.push.ZNTPushService"
@@ -88,7 +88,6 @@
             android:process="com.znt.push.ZNTPushService" />
         <service
             android:name="com.znt.wifimodel.ZNTWifiService"
-            android:permission="1000"
             android:process="com.znt.wifimodel.ZNTWifiService" />
         <!-- <service android:name="com.znt.wifimodel.ZNTWifiService"/> -->
         <!--

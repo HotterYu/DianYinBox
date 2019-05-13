@@ -1,5 +1,6 @@
 package com.znt.lib.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -30,7 +31,7 @@ public class NetWorkUtils
 	public static boolean checkEnable(Context paramContext) 
 	{
 		boolean i = false;
-		NetworkInfo localNetworkInfo = ((ConnectivityManager) paramContext
+		@SuppressLint("WrongConstant") NetworkInfo localNetworkInfo = ((ConnectivityManager) paramContext
 				.getSystemService("connectivity")).getActiveNetworkInfo();
 		if ((localNetworkInfo != null) && (localNetworkInfo.isAvailable()))
 			return true;
@@ -134,11 +135,16 @@ public class NetWorkUtils
 	 }
 	public static boolean checkEthernet(Context context)
 	{
-		ConnectivityManager conn =(ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo networkInfo = conn.getNetworkInfo(ConnectivityManager.TYPE_ETHERNET);
-		if(networkInfo == null)
-			return false;
-		return networkInfo.isConnected();
+		try {
+			ConnectivityManager conn =(ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+			NetworkInfo networkInfo = conn.getNetworkInfo(ConnectivityManager.TYPE_ETHERNET);
+			if(networkInfo == null)
+				return false;
+			return networkInfo.isConnected();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 	/** 
@@ -147,36 +153,48 @@ public class NetWorkUtils
      * @return 
      */ 
     public static boolean isNetConnected(Context context) 
-    {  
-    	if(context == null)
-    		return false;
-    	
-    	if(TextUtils.isEmpty(getWifiName(context)))
-    		return false;
-    	
-        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);  
-        if (cm != null) 
-        {  
-            NetworkInfo[] infos = cm.getAllNetworkInfo();  
-            if (infos != null) 
-            {  
-                for (NetworkInfo ni : infos) 
-                {  
-                    if (ni.isConnected())
-                    {  
-                        return true;  
-                    }  
-                }  
-            }  
-        }  
-        return false;  
-    }   
+    {
+		try {
+			if(context == null)
+				return false;
+
+			if(TextUtils.isEmpty(getWifiName(context)))
+				return false;
+
+			ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+			if (cm != null)
+			{
+				NetworkInfo[] infos = cm.getAllNetworkInfo();
+				if (infos != null)
+				{
+					for (NetworkInfo ni : infos)
+					{
+						if (ni.isConnected())
+						{
+							return true;
+						}
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
     public static String getWifiName(Context context)
     {
-    	WifiManager wifiMgr = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        int wifiState = wifiMgr.getWifiState();
-        WifiInfo info = wifiMgr.getConnectionInfo();
-        return info != null ? info.getSSID() : null;
+
+		WifiManager wifiMgr = null;
+		try {
+			wifiMgr = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+			int wifiState = wifiMgr.getWifiState();
+			WifiInfo info = wifiMgr.getConnectionInfo();
+			return info != null ? info.getSSID() : null;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
     }
 
 	/**

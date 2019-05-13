@@ -19,12 +19,15 @@
 package com.jungle.mediaplayer.widgets;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Message;
 import android.util.AttributeSet;
-import android.view.TextureView;
+import android.util.Log;
+import android.view.SurfaceView;
 import android.view.View;
+
+import com.jungle.mediaplayer.player.render.SurfaceViewMediaRender;
+import com.znt.lib.utils.FileUtils;
 import com.znt.lib.utils.ViewUtils;
 import com.jungle.mediaplayer.R;
 import com.jungle.mediaplayer.base.BaseMediaPlayerListener;
@@ -32,12 +35,8 @@ import com.jungle.mediaplayer.base.VideoInfo;
 import com.jungle.mediaplayer.player.BaseMediaPlayer;
 import com.jungle.mediaplayer.player.SystemImplMediaPlayer;
 import com.jungle.mediaplayer.player.render.MediaRender;
-import com.jungle.mediaplayer.player.render.TextureViewMediaRender;
 import com.jungle.mediaplayer.utils.JMFileUtils;
 import com.jungle.mediaplayer.widgets.control.PlayerBottomControl;
-
-import java.util.List;
-import java.util.logging.Handler;
 
 public class JungleMediaPlayer extends MediaPlayerFrame {
 
@@ -58,7 +57,7 @@ public class JungleMediaPlayer extends MediaPlayerFrame {
             if(msg.what == MSG_ON_PLAY_VIEW_SHOW)
             {
                 String url = (String) msg.obj;
-                if(JMFileUtils.isMusic(url))
+                if(FileUtils.isMusic(url))
                 {
                     if(mOnCallBackListener != null)
                         mOnCallBackListener.onDevInfoShow(true);
@@ -69,7 +68,7 @@ public class JungleMediaPlayer extends MediaPlayerFrame {
                     mBottomControl.setVisibility(View.VISIBLE);
                     mTopControl.setVisibility(View.VISIBLE);
                 }
-                else
+                else if(FileUtils.isVideo(url))
                 {
                     if(mOnCallBackListener != null)
                         mOnCallBackListener.onDevInfoShow(false);
@@ -138,10 +137,11 @@ public class JungleMediaPlayer extends MediaPlayerFrame {
         });
     }
 
-    private TextureView surfaceView = null;
+    private SurfaceView surfaceView = null;
     private void initMediaPlayer() {
-        surfaceView = (TextureView) findViewById(R.id.player_surface);
-        mMediaPlayer = createMediaPlayer(new TextureViewMediaRender(surfaceView));
+        surfaceView = (SurfaceView) findViewById(R.id.player_surface);
+        //mMediaPlayer = createMediaPlayer(new TextureViewMediaRender(surfaceView));
+        mMediaPlayer = createMediaPlayer(new SurfaceViewMediaRender(surfaceView));
         //mMediaPlayer.addPlayerListener(mBasePlayerListener);
         mBottomControl.setMediaPlayer(this);
 
@@ -240,7 +240,10 @@ public class JungleMediaPlayer extends MediaPlayerFrame {
 
     @Override
     public void seekTo(int position) {
-        mMediaPlayer.seekTo(position);
+        if(!isLoading())
+            mMediaPlayer.seekTo(position);
+        else
+            Log.d("","seek forbid when player is loaiding!");
     }
 
     @Override

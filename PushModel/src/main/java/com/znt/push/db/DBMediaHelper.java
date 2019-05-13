@@ -11,6 +11,7 @@ import com.znt.lib.bean.LocalMediaInfor;
 import com.znt.lib.bean.MediaInfor;
 import com.znt.lib.bean.ResponseBean;
 import com.znt.lib.utils.SystemUtils;
+import com.znt.push.httpmodel.HttpAPI;
 
 import org.xutils.DbManager;
 import org.xutils.db.Selector;
@@ -151,6 +152,18 @@ public class DBMediaHelper
         //return db.findAll(ResponseBean.class);
     }
 
+    public void clearLocalPlanInfo(String url)
+    {
+
+        try {
+            ResponseBean mResponseBean = new ResponseBean();
+            mResponseBean.setKey(url);
+            mResponseBean.setValue("");
+            db.saveOrUpdate(mResponseBean);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public void addPlanInfor(CurPlanInfor planInfor) throws DbException
     {

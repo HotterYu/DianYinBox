@@ -26,17 +26,13 @@ import android.util.Log;
 import com.jungle.mediaplayer.base.VideoInfo;
 import com.jungle.mediaplayer.player.render.MediaRender;
 import com.jungle.mediaplayer.player.render.MockMediaRender;
+import com.znt.lib.utils.FileUtils;
 
 import java.io.IOException;
 
 public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     protected MediaPlayer mMediaPlayer;
-
-
-    public SystemImplMediaPlayer(Context context) {
-        this(context, new MockMediaRender());
-    }
 
     public SystemImplMediaPlayer(Context context, MediaRender render) {
         super(context, render);
@@ -52,42 +48,53 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
             mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
             mMediaPlayer.setOnSeekCompleteListener(mOnSeekCompletionListener);
             mMediaPlayer.setOnBufferingUpdateListener(mOnBufferingUpdateListener);
-            mMediaPlayer.setOnVideoSizeChangedListener(mOnVideoSizeChangedListener);
+
         }
     }
 
     @Override
     public void play(VideoInfo videoInfo) {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null)
+        {
             destroy();
         }
-
-        init();
         super.play(videoInfo);
-
-        // Clear old display and Reset.
-        Log.e(TAG, "Reset MediaPlayer!");
-        /*mMediaPlayer.setDisplay(null);
-        mMediaPlayer.reset();*/
-
         try
         {
-            String url = videoInfo.getStreamUrl();
+            init();
+            String url = mVideoInfo.getStreamUrl();
             if(url.startsWith("http://") || url.startsWith("https://"))
                 mMediaPlayer.setDataSource(mContext, Uri.parse(url));
             else
                 mMediaPlayer.setDataSource(url);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            if(FileUtils.isVideo(url))
+            {
+                mAutoPlayWhenHolderCreated = true;
+                mMediaPlayer.setScreenOnWhilePlaying(true);
+                mMediaPlayer.setOnVideoSizeChangedListener(mOnVideoSizeChangedListener);
+                if(mMediaRender.isRenderValid())
+                {
+                    mMediaRender.prepareMediaRender(mMediaPlayer);
+                    mMediaPlayer.prepareAsync();
+                }
+                else
+                {
+                    Log.e("","surface is createing!");
+                }
+            }
+            else if(FileUtils.isMusic(url))
+            {
+                 mMediaPlayer.prepareAsync();
+            }
 
-        // Prepare For Play.
-        Log.e(TAG, "Prepare MediaPlayer!");
-        try {
-            mMediaPlayer.prepareAsync();
+
         } catch (Exception e) {
             e.printStackTrace();
-            notifyError(-1, false, "Video PrepareAsync FAILED! Video might be damaged!!");
+
+            if(e != null)
+                notifyError(-1, false, e.getMessage());
+            else
+                notifyError(-1, false, "Video PrepareAsync FAILED! Video might be damaged!!");
             return;
         }
 
@@ -97,7 +104,7 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     @Override
     public void pause() {
-        if (mMediaPlayer == null || !mMediaPlayerIsPrepared) {
+        if (mMediaPlayer == null || !mMediaPlayerIsPrepared || isLoading()) {
             return;
         }
 
@@ -110,7 +117,7 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     @Override
     public void resume() {
-        if (mMediaPlayer == null || !mMediaPlayerIsPrepared) {
+        if (mMediaPlayer == null || !mMediaPlayerIsPrepared || isLoading()) {
             return;
         }
 
@@ -125,16 +132,18 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
             return;
         }
 
-        mIsPaused = false;
-        mMediaPlayerIsPrepared = false;
-        mMediaPlayer.stop();
+        if (mMediaPlayer.isPlaying()) {
+            mIsPaused = false;
+            mMediaPlayerIsPrepared = false;
+            mMediaPlayer.stop();
 
-        notifyStopped();
+            notifyStopped();
+        }
     }
 
     @Override
     public void seekTo(int millSeconds) {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null || !isLoading()) {
             if (millSeconds < 0) {
                 millSeconds = 0;
             }
@@ -154,12 +163,25 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     @Override
     public int getDuration() {
-        return mMediaPlayer != null ? mMediaPlayer.getDuration() : 0;
+        if(mMediaPlayer == null)
+            return 0;
+        if(mMediaPlayer.isPlaying() && !isLoading())
+        {
+            return mMediaPlayer.getDuration();
+        }
+        return 0;
     }
 
     @Override
     public int getCurrentPosition() {
-        return mMediaPlayer != null ? mMediaPlayer.getCurrentPosition() : 0;
+
+        if(mMediaPlayer == null)
+            return 0;
+        if(mMediaPlayer.isPlaying() && !isLoading())
+        {
+            return mMediaPlayer.getCurrentPosition();
+        }
+        return 0;
     }
 
     @Override
@@ -198,21 +220,23 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     @Override
     protected void playWithMediaRender() {
-        if (!mMediaPlayerIsPrepared) {
-            return;
-        }
 
-        try {
-            mMediaRender.prepareMediaRender(mMediaPlayer);
+        try
+        {
+            if(mMediaPlayer != null && mMediaRender.isRenderValid())
+            {
+                mMediaRender.prepareMediaRender(mMediaPlayer);
+                mMediaPlayer.prepareAsync();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
+            if(e != null)
+                notifyError(-1, false, e.getMessage());
+            else
+                notifyError(-1, false, "Video PrepareAsync FAILED! Video might be damaged!!");
         }
 
-        mMediaPlayer.setScreenOnWhilePlaying(true);
-        mMediaPlayer.start();
-        //mMediaPlayer.seekTo(0);
-
-        trySeekToMediaStartPosition();
     }
 
     @Override
@@ -238,16 +262,12 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
             mMediaPlayerIsPrepared = true;
             mIsLoading = false;
 
-            // Start Play.
-            /*if (mMediaRender.isRenderCreating() || !mMediaRender.isRenderValid()) {
-                mAutoPlayWhenHolderCreated = true;
-                mMediaPlayer.setScreenOnWhilePlaying(true);
-                mMediaPlayer.start();
-                trySeekToAudioStartPosition();
-            } else {
-                playWithMediaRender();
-            }*/
-            playWithMediaRender();
+            if (!mMediaPlayerIsPrepared) {
+                return;
+            }
+            mMediaPlayer.start();
+            trySeekToMediaStartPosition();
+
             notifyFinishLoading();
         }
     };
@@ -259,7 +279,8 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
         int seekToPosition = mVideoInfo.getCurrentPosition();
         if (mMediaPlayer != null && mMediaPlayerIsPrepared && seekToPosition > 0) {
-            mMediaPlayer.seekTo(seekToPosition);
+            seekTo(seekToPosition);
+            //mMediaPlayer.seekTo(seekToPosition);
         }
     }
 
@@ -283,7 +304,7 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
                 public void onCompletion(MediaPlayer player) {
                     Log.e(TAG, "Video Play Complete!");
 
-                    player.seekTo(0);
+                    //player.seekTo(0);
                     notifyPlayComplete();
                 }
             };
@@ -297,7 +318,7 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
                     updateMediaRenderSize();
 
                     mVideoSizeInitialized = true;
-                    trySeekToMediaStartPosition();
+                    //trySeekToMediaStartPosition();
                 }
             };
 

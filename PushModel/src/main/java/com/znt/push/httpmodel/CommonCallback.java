@@ -57,6 +57,8 @@ public abstract class CommonCallback<T>  extends BaseCallBack<T>
                 mResponseBean.setKey(key);
                 mResponseBean.setValue(jsonString);
 
+                DBMediaHelper.getInstance().clearLocalPlanInfo(key);
+
                 DBMediaHelper.getInstance().addResponseInfo(mResponseBean);
                 //String res = DBMediaHelper.getInstance().getResposeInfo(key);
             }

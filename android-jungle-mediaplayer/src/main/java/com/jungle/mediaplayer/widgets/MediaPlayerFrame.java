@@ -31,6 +31,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.SurfaceView;
 import android.view.TextureView;
 import android.view.View;
 import android.view.WindowManager;
@@ -81,7 +82,7 @@ public abstract class MediaPlayerFrame extends FrameLayout
     protected PlayerTopControl mTopControl;
     protected PlayerBottomControl mBottomControl;
     protected PlayerLoadingControl mLoadingControl;
-    private TextureView mTextureView = null;
+    private SurfaceView mTextureView = null;
     protected Point mInitializedScreenSize = new Point();
     protected boolean mIsFullscreen = false;
     protected boolean mShowTitleBar = true;
@@ -117,7 +118,7 @@ public abstract class MediaPlayerFrame extends FrameLayout
     }
 
     private float degreee = 0;
-    public void setTextureView(TextureView mTextureView)
+    public void setTextureView(SurfaceView mTextureView)
     {
         this.mTextureView = mTextureView;
     }

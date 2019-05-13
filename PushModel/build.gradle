@@ -42,7 +42,7 @@ dependencies {
 
     compileOnly project(':DianYinLib')
     implementation project(':OkHttpLib')
-    implementation 'com.squareup.okhttp3:okhttp:3.3.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
     implementation 'org.xutils:xutils:3.3.44'
 
     implementation 'com.amap.api:location:latest.integration'

@@ -64,9 +64,9 @@ public abstract class BaseMediaPlayer
     protected boolean mIsPaused = false;
 
 
-    public BaseMediaPlayer(Context context) {
+    /*public BaseMediaPlayer(Context context) {
         this(context, new MockMediaRender());
-    }
+    }*/
 
     public BaseMediaPlayer(Context context, MediaRender render) {
         mContext = context;

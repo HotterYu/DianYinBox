@@ -718,24 +718,34 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
         }
     }
 
+    private boolean isUpdatePlayReportRuning = false;
     private void updatePlayReport(final MediaInfor mediaInfor)
     {
-        if(!NetWorkUtils.isNetConnected(mContext))
-        {
+        if(isUpdatePlayReportRuning)
             return;
-        }
-        String dataId = mediaInfor.getMediaId();
-        String playType = "0";
-        if(mediaInfor.getMediaType().equals(MediaInfor.MEDIA_TYPE_MEDIA))
-            playType = "0";
-        else if(mediaInfor.getMediaType().equals(MediaInfor.MEDIA_TYPE_PUSH))
-            playType = "1";
+        isUpdatePlayReportRuning = true;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if(!NetWorkUtils.isNetConnected(mContext))
+                {
+                    return;
+                }
+                String dataId = mediaInfor.getMediaId();
+                String playType = "0";
+                if(mediaInfor.getMediaType().equals(MediaInfor.MEDIA_TYPE_MEDIA))
+                    playType = "0";
+                else if(mediaInfor.getMediaType().equals(MediaInfor.MEDIA_TYPE_PUSH))
+                    playType = "1";
 
-        String dataType = "1";
-        if(mediaInfor.getMediaType().equals(MediaInfor.MEDIA_TYPE_ADV))
-            dataType = "2";
+                String dataType = "1";
+                if(mediaInfor.getMediaType().equals(MediaInfor.MEDIA_TYPE_ADV))
+                    dataType = "2";
 
-        updatePlayReport(dataId, playType, dataType);
+                updatePlayReport(dataId, playType, dataType);
+            }
+        }).start();
+
 
     }
     private void updatePlayReport(final String dataId, final String playType, final String dataType)
@@ -743,6 +753,7 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
         HttpClient.playRecordReport(mContext, dataId, playType, dataType, new CommonCallback<BaseResultBean>(BaseResultBean.class) {
         @Override
         public void onResponse(BaseResultBean response, int id) {
+            isUpdatePlayReportRuning = false;
             /*if(response != null && response.isSuccess())
             {
 
@@ -756,6 +767,7 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
         @Override
         public void onError(Call call, Exception e, int id) {
             //updatePlayReport(dataId, playType, dataType);
+            isUpdatePlayReportRuning = false;
         }
 
         @Override
@@ -1062,6 +1074,7 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
     {
         if(mCurPlayMediaManager != null)
             mCurPlayMediaManager.clearNormalPlan();
+
     }
     private void clearAdPlan()
     {
@@ -1069,6 +1082,7 @@ public class ZNTPushService extends Service implements  UpdateManager.SpaceCheck
             mCurPlayMediaManager.clearAdPlan();
 
         mCurPlayMediaManager.setAdPlanInfor(null);
+        DBMediaHelper.getInstance().clearLocalPlanInfo(HttpAPI.GET_CUR_ADV_PLAN);
     }
 
     private boolean isFirstGetPushMedias = true;

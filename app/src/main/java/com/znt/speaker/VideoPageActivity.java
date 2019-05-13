@@ -45,7 +45,6 @@ import com.znt.push.entity.LocalDataEntity;
 import com.znt.push.httpmodel.HttpAPI;
 import com.znt.push.httpmodel.HttpCallback;
 import com.znt.push.httpmodel.HttpClient;
-import com.znt.push.reboot.RebootModel;
 import com.znt.push.v.IDevStatusView;
 import com.znt.speaker.dialog.LoginDialog;
 import com.znt.speaker.dialog.SettingDialog;
@@ -55,6 +54,7 @@ import com.znt.speaker.media.MediaScanFactory;
 import com.znt.speaker.model.SDCardMountModel;
 import com.znt.speaker.permission.PermissionHelper;
 import com.znt.speaker.permission.PermissionInterface;
+import com.znt.speaker.reboot.RebootModel;
 import com.znt.speaker.video.VideoPlayer;
 import com.znt.speaker.view.DevInfoView;
 import com.znt.speaker.view.ISDCardMountView;
@@ -112,6 +112,8 @@ public class VideoPageActivity extends AppCompatActivity implements
     private final int MSG_ON_PLAY_STATUS = 7;
     private final int MSG_ON_PUSH_MEDIA = 8;
     private final int MSG_ON_MEDIA_CHANGED = 9;
+    private final int MSG_ON_DEV_INFO_UPDATE = 10;
+    private final int MSG_ON_DEV_NET_UPDATE = 11;
 
     private Handler mHandler = new Handler(new Handler.Callback()
     {
@@ -164,6 +166,15 @@ public class VideoPageActivity extends AppCompatActivity implements
                     tempInfo.setMediaType(MediaInfor.MEDIA_TYPE_ADV);
                     mPlayFactory.playPushMedia(tempInfo);
                 }
+            }
+            else if(msg.what == MSG_ON_DEV_INFO_UPDATE)
+            {
+                showDevInfor();
+            }
+            else if(msg.what == MSG_ON_DEV_NET_UPDATE)
+            {
+                boolean onlineResult = (boolean) msg.obj;
+                mDevInfoView.setDevStatus(onlineResult);
             }
             else if(msg.what == MSG_ON_UPDATE)
             {
@@ -269,7 +280,8 @@ public class VideoPageActivity extends AppCompatActivity implements
         public void run() {
 
             mHandler.postDelayed(this, 1000);
-            showTitleInfo();
+            mHandler.sendEmptyMessage(MSG_UPDATE_TIME);
+            //showTitleInfo();
         }
     };
 
@@ -312,6 +324,7 @@ public class VideoPageActivity extends AppCompatActivity implements
         }
         try
         {
+
             mHandler.postDelayed(runnable, 1000);
 
             String source = getIntent().getStringExtra("ZNT_SOURCE");
@@ -333,7 +346,8 @@ public class VideoPageActivity extends AppCompatActivity implements
 
             initData();
 
-            showDevInfor();
+            ViewUtils.sendMessage(mHandler,MSG_ON_DEV_INFO_UPDATE);
+
         }
         catch (Exception e)
         {
@@ -598,13 +612,8 @@ public class VideoPageActivity extends AppCompatActivity implements
     public void onPushSuccess(DeviceStatusInfor devStatusInfor)
     {
         mZNTWifiServiceManager.devStatusCheck(true);
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                mDevInfoView.setDevStatus(true);
-            }
-        });
         mPlayFactory.setOnLineStatus(true);
+        ViewUtils.sendMessage(mHandler,MSG_ON_DEV_NET_UPDATE,true);
     }
 
     @Override
@@ -612,12 +621,8 @@ public class VideoPageActivity extends AppCompatActivity implements
     {
         mPlayFactory.setOnLineStatus(false);
         mZNTWifiServiceManager.devStatusCheck(false);
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                mDevInfoView.setDevStatus(false);
-            }
-        });
+        ViewUtils.sendMessage(mHandler,MSG_ON_DEV_NET_UPDATE,false);
+
     }
 
     @Override
@@ -626,7 +631,7 @@ public class VideoPageActivity extends AppCompatActivity implements
         if(count == 5)
         {
             mPlayFactory.updatePushParams(null,false);
-            mRebootModel.checkRebootDevice(curServerTime);
+            checkRebootDevice(curServerTime);
         }
     }
 
@@ -653,7 +658,7 @@ public class VideoPageActivity extends AppCompatActivity implements
         curDevName = devName;
         LocalDataEntity.newInstance(getApplicationContext()).setDeviceId(devId);
         LocalDataEntity.newInstance(getApplicationContext()).setDeviceName(devName);
-        showDevInfor();
+
         HttpClient.updateDevInfo(getApplicationContext());
 
         if(!TextUtils.isEmpty(shopCode))
@@ -671,6 +676,9 @@ public class VideoPageActivity extends AppCompatActivity implements
                 // TODO: handle exception
             }
         }
+
+        ViewUtils.sendMessage(mHandler,MSG_ON_DEV_INFO_UPDATE);
+
     }
 
     private void showTitleInfo()
@@ -1012,4 +1020,49 @@ public class VideoPageActivity extends AppCompatActivity implements
             }
         });
     }
+
+    private int checkRebootStatusCount = 0;
+    public void checkRebootDevice(long curServerTime)
+    {
+        if(checkRebootStatusCount < 50)
+        {
+            checkRebootStatusCount ++;
+            return;
+        }
+        checkRebootStatusCount = 0;
+        try
+        {
+            if(curServerTime > 0 && isOver24Hours(curServerTime))//判断上次关机时间是不是超过24小时
+            {
+                String curHour = DateUtils.getHour(curServerTime);
+                //String s3 = DateUtils.getHour(System.currentTimeMillis());
+                if(!TextUtils.isEmpty(curHour))
+                {
+                    int curHourInt = Integer.parseInt(curHour);
+                    if((curHourInt == 2 || curHourInt == 3))//凌晨
+                    {
+                        //更新关机时间
+                        LocalDataEntity.newInstance(getApplicationContext()).setLastRebootTime(curServerTime);
+                        LocalDataEntity.newInstance(getApplicationContext()).increaseRebootCount();
+                        mRebootModel.rebootBox(180);
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            // TODO: handle exception
+        }
+    }
+    private boolean isOver24Hours(long curServerTime)
+    {
+        long lastRebootTime = LocalDataEntity.newInstance(getApplicationContext()).getLastRebootTime();
+        /*if(lastRebootTime <= 0)
+            return false;*/
+
+        if((curServerTime - lastRebootTime) >= 24 * 60 * 60 * 1000)
+            return true;
+        return false;
+    }
+
 }

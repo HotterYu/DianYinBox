@@ -1,10 +1,6 @@
 package com.znt.speaker.view;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Message;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -32,14 +28,6 @@ public class DevInfoView extends RelativeLayout {
     private TextView tvSetting;
     private TextView tvUpdate;
     private TextView tvClose;
-
-    private Handler mHandler = new Handler()
-    {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-        }
-    };
 
     public DevInfoView(Context context) {
         super(context);
@@ -79,18 +67,11 @@ public class DevInfoView extends RelativeLayout {
 
     public void setDevInfor(final String info, final String version)
     {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run()
-            {
-                if(isShown())
-                {
-                    setDevInfor(info);
-                    setDevVersion(version);
-                }
-
-            }
-        });
+        if(isShown())
+        {
+            setDevInfor(info);
+            setDevVersion(version);
+        }
     }
 
     public void setDevInfor(String title)

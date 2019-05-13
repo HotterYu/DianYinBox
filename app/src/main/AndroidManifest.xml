@@ -54,6 +54,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".VideoPageActivity"
@@ -72,7 +73,7 @@
 
         <service
             android:name="com.znt.download.ZNTDownloadService"
-            android:permission="1000"
+
             android:process="com.znt.download.ZNTDownloadService" />
         <service
             android:name="com.znt.push.ZNTPushService"
@@ -80,7 +81,7 @@
             android:process="com.znt.push.ZNTPushService" />
         <service
             android:name="com.znt.wifimodel.ZNTWifiService"
-            android:permission="1000"
+
             android:process="com.znt.wifimodel.ZNTWifiService" />
         <!--<service android:name="com.znt.wifimodel.ZNTWifiService"/>-->
         <!--<service android:name="com.znt.push.ZNTPushService"/>
