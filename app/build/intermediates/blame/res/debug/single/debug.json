@@ -1112,10 +1112,6 @@
         "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\538c4df2fdd9383c2ef9a3358d926352\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "D:\\Development\\code\\DianYinBox\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\9a649040e3d7883994f150b2481ae2c7\\res\\layout\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\Development\\code\\DianYinBox\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_bottom_sheet_slide_out.xml.flat",
         "source": "C:\\Users\\Hotter\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\0238aaa9d948f0af081fdb20e0074b63\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },

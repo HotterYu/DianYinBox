@@ -10,7 +10,8 @@ package com.znt.push.httpmodel;
 public class HttpAPI
 {
 	//public static final String SERVER_ADDRESS = "http://47.104.209.249:8080/api";
-	public static final String SERVER_ADDRESS = "http://api.zhunit.com/api";
+	//public static final String SERVER_ADDRESS = "http://192.168.0.112:8080/api";
+    public static final String SERVER_ADDRESS = "http://api.zhunit.com/api";
 
 
 	//检查升级

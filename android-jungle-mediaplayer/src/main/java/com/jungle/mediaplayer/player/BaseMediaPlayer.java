@@ -30,6 +30,7 @@ import com.jungle.mediaplayer.base.MediaSize;
 import com.jungle.mediaplayer.base.VideoInfo;
 import com.jungle.mediaplayer.player.render.MediaRender;
 import com.jungle.mediaplayer.player.render.MockMediaRender;
+import com.jungle.mediaplayer.player.render.SurfaceViewMediaRender;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public abstract class BaseMediaPlayer
 
 
     protected Context mContext;
-    protected MediaRender mMediaRender;
+    protected SurfaceViewMediaRender mMediaRender;
     protected BaseMediaPlayerListener mPlayerListener = null;
     protected Handler mMainHandler = new Handler(Looper.getMainLooper());
     protected VideoInfo mVideoInfo;
@@ -68,11 +69,18 @@ public abstract class BaseMediaPlayer
         this(context, new MockMediaRender());
     }*/
 
-    public BaseMediaPlayer(Context context, MediaRender render) {
+    public BaseMediaPlayer(Context context, SurfaceViewMediaRender render) {
         mContext = context;
         mMediaRender = render;
-        render.setListener(this);
-        render.initRender();
+
+    }
+
+    protected void initRender()
+    {
+        mMediaRender.setListener(this);
+        mMediaRender.initRender();
+
+
     }
 
     public void play(VideoInfo videoInfo) {

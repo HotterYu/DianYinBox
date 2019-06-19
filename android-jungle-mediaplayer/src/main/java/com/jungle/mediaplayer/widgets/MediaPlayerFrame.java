@@ -26,13 +26,11 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
-import android.view.TextureView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -82,14 +80,13 @@ public abstract class MediaPlayerFrame extends FrameLayout
     protected PlayerTopControl mTopControl;
     protected PlayerBottomControl mBottomControl;
     protected PlayerLoadingControl mLoadingControl;
-    private SurfaceView mTextureView = null;
+    protected SurfaceView mTextureView = null;
     protected Point mInitializedScreenSize = new Point();
     protected boolean mIsFullscreen = false;
     protected boolean mShowTitleBar = true;
     protected boolean mUpdateMediaSizeDisabled = false;
     protected boolean mIsShowingToolView = false;
 
-    @Nullable
     protected FrameHandler mFrameHandler;
 
 
@@ -202,7 +199,7 @@ public abstract class MediaPlayerFrame extends FrameLayout
         mGestureController.setAdjustPanelContainer(container);
     }
 
-    public void setFrameHandler(@Nullable FrameHandler handler) {
+    public void setFrameHandler(FrameHandler handler) {
         mFrameHandler = handler;
     }
 

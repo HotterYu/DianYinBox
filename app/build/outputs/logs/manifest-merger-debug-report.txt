@@ -19,8 +19,8 @@ MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\Hotter\.gradle\caches\t
 MERGED from [org.xutils:xutils:3.3.44] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\xutils-3.3.44.aar\cdd717401b834072ec22c5ffe6a38d1b\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\67e1b050a0272db37018bf7b2e1bfefd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\acdab346a4f677b4290aaf12b4deb750\AndroidManifest.xml:17:1-22:12
-MERGED from [com.tencent.bugly:crashreport:2.8.6.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\crashreport-2.8.6.0.aar\8ff221eda3918407547709d80c0108fc\AndroidManifest.xml:2:1-9:12
-MERGED from [com.tencent.bugly:nativecrashreport:3.6.0.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\nativecrashreport-3.6.0.1.aar\54949c905cadd97abd16b259b8e9cf19\AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:crashreport:3.0.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\crashreport-3.0.0.aar\6c65ca8c6d3c85b138987f99520bec89\AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\nativecrashreport-3.7.1.aar\e244243576781f3e6ab07f2f982707fd\AndroidManifest.xml:2:1-9:12
 MERGED from [com.qihoo360.replugin:replugin-plugin-lib:2.3.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\replugin-plugin-lib-2.3.0.aar\21b40099b8d6c02d178e6a8f2bfeebd4\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\ed8f2fcd6d327f12adc611a963408331\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\430af951fe936fdda1acb4dcbba147ac\AndroidManifest.xml:17:1-22:12
@@ -137,50 +137,54 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:24:5-68
 	android:name
 		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:24:22-65
+uses-permission#android.permission.DEVICE_POWER
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:25:5-71
+	android:name
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:25:22-68
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:28:5-81
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:29:5-81
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:28:22-78
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:29:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:30:5-79
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:31:5-79
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:30:22-76
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:31:22-76
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:32:5-89
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:33:5-89
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:32:22-86
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:33:22-86
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:34:5-81
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:35:5-81
 MERGED from [:WiFiModel] D:\Development\code\DianYinBox\WiFiModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:12:5-81
 MERGED from [:WiFiModel] D:\Development\code\DianYinBox\WiFiModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:12:5-81
 MERGED from [:DownloadModel] D:\Development\code\DianYinBox\DownloadModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:12:5-81
 MERGED from [:DownloadModel] D:\Development\code\DianYinBox\DownloadModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:34:22-78
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:35:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:36:5-80
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:37:5-80
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:36:22-77
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:37:22-77
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:39:5-75
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:40:5-75
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:39:22-72
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:40:22-72
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:42:5-73
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:43:5-73
 MERGED from [:WiFiModel] D:\Development\code\DianYinBox\WiFiModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:18:5-73
 MERGED from [:WiFiModel] D:\Development\code\DianYinBox\WiFiModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:18:5-73
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:42:22-70
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:43:22-70
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:45:5-74
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:46:5-74
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:45:22-71
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:46:22-71
 uses-permission#android.permission.BLUETOOTH
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:47:5-68
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:48:5-68
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:47:22-65
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:48:22-65
 application
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:49:5-132:19
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:50:5-132:19
 MERGED from [:android-jungle-mediaplayer] D:\Development\code\DianYinBox\android-jungle-mediaplayer\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-15:19
 MERGED from [:android-jungle-mediaplayer] D:\Development\code\DianYinBox\android-jungle-mediaplayer\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-15:19
 MERGED from [:PushModel] D:\Development\code\DianYinBox\PushModel\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-28:19
@@ -194,37 +198,35 @@ MERGED from [org.xutils:xutils:3.3.44] C:\Users\Hotter\.gradle\caches\transforms
 MERGED from [com.qihoo360.replugin:replugin-plugin-lib:2.3.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\replugin-plugin-lib-2.3.0.aar\21b40099b8d6c02d178e6a8f2bfeebd4\AndroidManifest.xml:24:5-25:19
 MERGED from [com.qihoo360.replugin:replugin-plugin-lib:2.3.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\replugin-plugin-lib-2.3.0.aar\21b40099b8d6c02d178e6a8f2bfeebd4\AndroidManifest.xml:24:5-25:19
 	android:supportsRtl
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:55:9-35
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:56:9-35
 	android:label
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:53:9-41
-	android:hardwareAccelerated
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:56:9-43
-	android:roundIcon
 		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:54:9-41
+	android:hardwareAccelerated
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:57:9-44
+	android:roundIcon
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:55:9-41
 	android:largeHeap
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:57:9-33
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:58:9-33
 	android:icon
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:52:9-36
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:53:9-36
 	android:allowBackup
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:51:9-35
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:52:9-35
 	android:theme
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:58:9-40
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:59:9-40
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:50:9-53
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:51:9-53
 activity#com.znt.speaker.VideoPageActivity
-ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:59:9-71:20
+ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:60:9-71:20
 	android:screenOrientation
 		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:65:13-49
 	android:launchMode
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:62:13-48
-	android:hardwareAccelerated
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:64:13-47
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:63:13-48
 	android:exported
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:63:13-36
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:64:13-36
 	android:configChanges
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:61:13-74
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:62:13-74
 	android:name
-		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:60:13-46
+		ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:61:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from D:\Development\code\DianYinBox\app\src\main\AndroidManifest.xml:66:13-70:29
 action#android.intent.action.MAIN
@@ -335,10 +337,10 @@ MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Hotter\.gradle
 MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\67e1b050a0272db37018bf7b2e1bfefd\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\acdab346a4f677b4290aaf12b4deb750\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\acdab346a4f677b4290aaf12b4deb750\AndroidManifest.xml:20:5-44
-MERGED from [com.tencent.bugly:crashreport:2.8.6.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\crashreport-2.8.6.0.aar\8ff221eda3918407547709d80c0108fc\AndroidManifest.xml:5:5-7:41
-MERGED from [com.tencent.bugly:crashreport:2.8.6.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\crashreport-2.8.6.0.aar\8ff221eda3918407547709d80c0108fc\AndroidManifest.xml:5:5-7:41
-MERGED from [com.tencent.bugly:nativecrashreport:3.6.0.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\nativecrashreport-3.6.0.1.aar\54949c905cadd97abd16b259b8e9cf19\AndroidManifest.xml:5:5-7:41
-MERGED from [com.tencent.bugly:nativecrashreport:3.6.0.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\nativecrashreport-3.6.0.1.aar\54949c905cadd97abd16b259b8e9cf19\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:crashreport:3.0.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\crashreport-3.0.0.aar\6c65ca8c6d3c85b138987f99520bec89\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:crashreport:3.0.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\crashreport-3.0.0.aar\6c65ca8c6d3c85b138987f99520bec89\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\nativecrashreport-3.7.1.aar\e244243576781f3e6ab07f2f982707fd\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\nativecrashreport-3.7.1.aar\e244243576781f3e6ab07f2f982707fd\AndroidManifest.xml:5:5-7:41
 MERGED from [com.qihoo360.replugin:replugin-plugin-lib:2.3.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\replugin-plugin-lib-2.3.0.aar\21b40099b8d6c02d178e6a8f2bfeebd4\AndroidManifest.xml:22:5-43
 MERGED from [com.qihoo360.replugin:replugin-plugin-lib:2.3.0] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\replugin-plugin-lib-2.3.0.aar\21b40099b8d6c02d178e6a8f2bfeebd4\AndroidManifest.xml:22:5-43
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Hotter\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\ed8f2fcd6d327f12adc611a963408331\AndroidManifest.xml:20:5-44

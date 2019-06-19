@@ -23,9 +23,13 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
 import com.jungle.mediaplayer.base.VideoInfo;
 import com.jungle.mediaplayer.player.render.MediaRender;
 import com.jungle.mediaplayer.player.render.MockMediaRender;
+import com.jungle.mediaplayer.player.render.SurfaceViewMediaRender;
 import com.znt.lib.utils.FileUtils;
 
 import java.io.IOException;
@@ -34,7 +38,7 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
     protected MediaPlayer mMediaPlayer;
 
-    public SystemImplMediaPlayer(Context context, MediaRender render) {
+    public SystemImplMediaPlayer(Context context, SurfaceViewMediaRender render) {
         super(context, render);
     }
 
@@ -49,6 +53,11 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
             mMediaPlayer.setOnSeekCompleteListener(mOnSeekCompletionListener);
             mMediaPlayer.setOnBufferingUpdateListener(mOnBufferingUpdateListener);
 
+            if(FileUtils.isVideo(mVideoInfo.getStreamUrl()))
+            {
+                initRender();
+                mMediaRender.getSurfaceView().setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -190,7 +199,7 @@ public class SystemImplMediaPlayer extends BaseMediaPlayer {
 
         if (mMediaPlayer != null) {
             stop();
-
+            mMediaRender.getSurfaceView().setVisibility(View.GONE);
             mMediaPlayer.setDisplay(null);
             mMediaPlayer.reset();
             mMediaPlayer.release();

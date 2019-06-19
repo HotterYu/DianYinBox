@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.PowerManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -297,11 +298,12 @@ public class VideoPageActivity extends AppCompatActivity implements
         {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
             requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+            getSupportActionBar().hide();
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                     WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            getSupportActionBar().hide();
+
             hideBottomUIMenu();
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED, WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
             /*setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);*/
             setContentView(R.layout.activity_video_page);
 
@@ -480,7 +482,7 @@ public class VideoPageActivity extends AppCompatActivity implements
             mDevInfoView.setOnDevVersionClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mRebootModel.rebootBox(5);
+                    mRebootModel.rebootBox(3);
                 }
             });
 
@@ -586,16 +588,36 @@ public class VideoPageActivity extends AppCompatActivity implements
         }
     }
 
+    private PowerManager.WakeLock mWakeLock;
+
+    private void acquireWakeLock() {
+        if(mWakeLock == null) {
+            PowerManager pm = (PowerManager)getSystemService(Context.POWER_SERVICE);
+            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP,
+                    this.getClass().getCanonicalName());
+            mWakeLock.acquire();
+
+        }
+
+    }
+
+    private void releaseWakeLock() {
+        if(mWakeLock != null) {
+            mWakeLock.release();
+            mWakeLock = null;
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        /**暂停系统其它媒体的状态*/
-        //MediaUtils.muteAudioFocus(getApplicationContext(), false);
+        acquireWakeLock();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        releaseWakeLock();
     }
 
 

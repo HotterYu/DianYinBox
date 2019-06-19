@@ -158,7 +158,7 @@ public class JungleMediaPlayer extends MediaPlayerFrame {
         ViewUtils.sendMessage(mHandler,MSG_ON_PLAY_VIEW_SHOW,url);
     }
 
-    protected BaseMediaPlayer createMediaPlayer(MediaRender render) {
+    protected BaseMediaPlayer createMediaPlayer(SurfaceViewMediaRender render) {
         return new SystemImplMediaPlayer(getContext(), render);
     }
 

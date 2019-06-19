@@ -6,7 +6,7 @@ public class PluginConstant
 {
 
     public static boolean isPlugin = false;
-    public static int versiongCode = 20190386;
-    public static String versiongName = "V2019.03.86P";
+    public static int versiongCode = 20190502;
+    public static String versiongName = "V2019.05.02P";
 
 }

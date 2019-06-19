@@ -12,10 +12,10 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.znt.speaker"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
-        versionCode 20190386
-        versionName "V2019.03.86"
+        versionCode 20190502
+        versionName "V2019.05.02"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.config
         ndk {
@@ -78,6 +78,8 @@ dependencies {
     implementation 'com.qihoo360.replugin:replugin-plugin-lib:2.3.0'
 
     implementation project(':android-jungle-mediaplayer')
+
+
 
 
 }
